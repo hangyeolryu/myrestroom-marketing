@@ -44,7 +44,7 @@ export default function TermsPage() {
               <FaFileContract className="text-white text-2xl" />
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-4">이용약관</h1>
-            <p className="text-gray-600">최종 업데이트: 2024년 8월 5일</p>
+            <p className="text-gray-600">최종 업데이트: 2025년 8월 5일</p>
           </div>
 
           <div className="prose prose-lg max-w-none">

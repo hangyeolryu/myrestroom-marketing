@@ -48,7 +48,7 @@ export default function PrivacyPage() {
             <h1 className="text-3xl font-bold text-gray-900 mb-4">
               개인정보처리방침
             </h1>
-            <p className="text-gray-600">최종 업데이트: 2024년 8월 5일</p>
+            <p className="text-gray-600">최종 업데이트: 2025년 8월 5일</p>
           </div>
 
           <div className="prose prose-lg max-w-none">
@@ -231,8 +231,8 @@ export default function PrivacyPage() {
                 </p>
                 <ul className="text-gray-700 space-y-1">
                   <li>이름: MyRestroom Team</li>
-                  <li>이메일: privacy@myrestroom.app</li>
-                  <li>전화번호: 02-1234-5678</li>
+                  <li>이메일: myrestroom.official@gmail.com</li>
+                  {/* <li>전화번호: 02-1234-5678</li> */}
                 </ul>
               </div>
             </section>
@@ -248,13 +248,13 @@ export default function PrivacyPage() {
               <div className="bg-teal-50 rounded-lg p-6 border border-teal-200">
                 <p className="text-gray-700">
                   <strong className="text-gray-900">이메일:</strong>{" "}
-                  privacy@myrestroom.app
+                  myrestroom.official@gmail.com
                   <br />
                   <strong className="text-gray-900">웹사이트:</strong>{" "}
-                  www.myrestroom.app
-                  <br />
+                  https://myrestroom-korea.web.app/privacy/
+                  {/* <br />
                   <strong className="text-gray-900">주소:</strong> 서울특별시
-                  강남구 테헤란로 123
+                  강남구 테헤란로 123 */}
                 </p>
               </div>
             </section>

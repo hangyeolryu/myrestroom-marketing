@@ -48,7 +48,7 @@ export default function CopyrightPage() {
             <h1 className="text-3xl font-bold text-gray-900 mb-4">
               저작권 정보
             </h1>
-            <p className="text-gray-600">최종 업데이트: 2024년 8월 5일</p>
+            <p className="text-gray-600">최종 업데이트: 년2025 8월 5일</p>
           </div>
 
           <div className="prose prose-lg max-w-none">
