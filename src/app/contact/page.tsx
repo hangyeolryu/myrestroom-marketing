@@ -8,7 +8,12 @@ import {
   FaComments,
   FaDownload,
   FaHeadset,
+  FaApple,
+  FaAndroid,
 } from "react-icons/fa";
+
+const APP_STORE_URL =
+  "https://apps.apple.com/us/app/%EB%82%98%EC%9D%98-%ED%99%94%EC%9E%A5%EC%8B%A4/id6748704814";
 
 export default function ContactPage() {
   return (
@@ -275,7 +280,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Download App */}
+            {/* Download App */
+            }
             <div className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <FaDownload className="text-teal-600 mr-2" />앱 다운로드
@@ -286,18 +292,23 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="#"
-                  className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors font-semibold text-center"
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors font-semibold text-center flex items-center justify-center gap-2"
                 >
-                  App Store
+                  <FaApple className="text-xl" />
+                  iOS App Store
                 </Link>
-                <Link
-                  href="#"
-                  className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold text-center"
+                <div
+                  aria-disabled="true"
+                  className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold text-center flex items-center justify-center gap-2 opacity-60 cursor-not-allowed"
                 >
-                  Google Play
-                </Link>
+                  <FaAndroid className="text-xl" />
+                  Android (준비 중)
+                </div>
               </div>
+              <p className="mt-3 text-sm text-gray-500">Android 버전은 현재 개발 중입니다.</p>
             </div>
           </div>
         </div>

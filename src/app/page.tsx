@@ -13,7 +13,11 @@ import {
   FaToiletPaper,
   FaSoap,
   FaShieldVirus,
+  FaApple,
 } from "react-icons/fa";
+
+const APP_STORE_URL =
+  "https://apps.apple.com/us/app/%EB%82%98%EC%9D%98-%ED%99%94%EC%9E%A5%EC%8B%A4/id6748704814";
 
 export default function Home() {
   return (
@@ -34,7 +38,7 @@ export default function Home() {
                 />
               </div>
               <span className="text-2xl font-bold text-gray-900">
-                MyRestroom
+                나의 화장실
               </span>
             </Link>
             <nav className="hidden md:flex space-x-8">
@@ -43,6 +47,24 @@ export default function Home() {
                 className="text-gray-600 hover:text-teal-600 transition-colors"
               >
                 기능
+              </Link>
+              <Link
+                href="/#reporting"
+                className="text-gray-600 hover:text-teal-600 transition-colors"
+              >
+                신고
+              </Link>
+              <Link
+                href="/#verification"
+                className="text-gray-600 hover:text-teal-600 transition-colors"
+              >
+                검증
+              </Link>
+              <Link
+                href="/#amenities"
+                className="text-gray-600 hover:text-teal-600 transition-colors"
+              >
+                편의시설
               </Link>
               <Link
                 href="/#hygiene"
@@ -71,11 +93,14 @@ export default function Home() {
             </nav>
             <div className="flex items-center space-x-4">
               <Link
-                href="/contact"
-                className="bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition-colors font-medium"
-              >
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition-colors font-medium"
+                  >
+                  <FaApple className="text-xl" />
                 다운로드
-              </Link>
+                </Link>
             </div>
           </div>
         </div>
@@ -98,22 +123,22 @@ export default function Home() {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              깨끗한 나의{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">
-                화장실
-              </span>
+              화장실에 진심인 사람들의<br/>
+              <span className="mt-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">화장실 필수 앱</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              언제 어디서나 깨끗하고 편리한 화장실을 찾아보세요. 실시간 리뷰와
-              평점으로 최고의 화장실을 추천받으세요.
+              아기/가족, 위생, 기본 시설, 환경/쾌적성까지 세부 편의시설로 원하는 화장실을 정확하게 찾고,
+              AI 필터링·사용자 검증·신고/이의제기 시스템으로 더 안전하게 이용하세요.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-teal-600 text-white px-8 py-4 rounded-full hover:bg-teal-700 transition-colors font-semibold text-lg flex items-center justify-center space-x-2"
               >
-                <FaMobileAlt />
-                <span>앱 다운로드</span>
+                <FaApple className="text-xl" />
+                <span>iOS앱 다운로드</span>
               </Link>
               <Link
                 href="/#features"
@@ -122,9 +147,11 @@ export default function Home() {
                 기능 알아보기
               </Link>
             </div>
+            <p className="mt-3 text-sm text-gray-500">Android 버전은 준비 중입니다.</p>
           </div>
         </div>
       </section>
+
 
       {/* Features Section */}
       <section id="features" className="py-20 bg-white">
@@ -134,62 +161,222 @@ export default function Home() {
               주요 기능
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              MyRestroom이 제공하는 핵심 기능들을 확인해보세요
+              세부 편의시설, AI 필터링, 사용자 검증, 신고/보상/이의제기까지 모두 담았습니다
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-teal-50 to-blue-50 hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaSearch className="text-white text-2xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                실시간 검색
-              </h3>
-              <p className="text-gray-600">
-                현재 위치 기반으로 주변 화장실을 실시간으로 검색하고 찾아보세요
-              </p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">실시간 검색</h3>
+              <p className="text-gray-600">현재 위치 기반 빠른 탐색 및 혼잡도/인기순 정렬(예정)</p>
             </div>
 
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-teal-50 to-blue-50 hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaStar className="text-white text-2xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                리뷰 & 평점
-              </h3>
-              <p className="text-gray-600">
-                실제 사용자들의 리뷰와 평점으로 깨끗하고 편리한 화장실을
-                선택하세요
-              </p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">리뷰 & 평점</h3>
+              <p className="text-gray-600">실사용자 리뷰와 평점, 신뢰도 기반 정렬로 더 정확한 선택</p>
             </div>
 
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-teal-50 to-blue-50 hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaHeart className="text-white text-2xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                즐겨찾기
-              </h3>
-              <p className="text-gray-600">
-                자주 이용하는 화장실을 즐겨찾기에 추가하고 빠르게 접근하세요
-              </p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">즐겨찾기</h3>
+              <p className="text-gray-600">즐겨찾기·히스토리·오프라인 보기(예정)로 더 편리하게</p>
             </div>
 
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-teal-50 to-blue-50 hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaBell className="text-white text-2xl" />
+                <FaUsers className="text-white text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                알림 서비스
+                세부 편의시설 필터
               </h3>
-              <p className="text-gray-600">
-                새로운 화장실 추가나 특별한 이벤트에 대한 알림을 받아보세요
-              </p>
+              <p className="text-gray-600">아기/가족·위생·기본 시설·환경까지 디테일 필터</p>
+            </div>
+
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-teal-50 to-blue-50 hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaShieldAlt className="text-white text-2xl" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">신고·보상 시스템</h3>
+              <p className="text-gray-600">3회 이상 자동 숨김, 관리자 검토, 정확한 신고에 보상</p>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Amenities Detail Section */}
+      <section id="amenities" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              화장실에 진심인 사람들을 위한 디테일
+            </h2>
+            <p className="text-lg text-gray-600">
+              아래 편의시설 정보를 기반으로 원하는 화장실을 정확히 찾을 수 있어요.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white rounded-2xl shadow p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">아기 & 가족</h3>
+              <ul className="text-sm text-gray-700 space-y-2">
+                <li>👶 기저귀 교환대</li>
+                <li>🤱 수유실</li>
+                <li>👨‍👩‍👧‍👦 가족/유니섹스 화장실</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">위생</h3>
+              <ul className="text-sm text-gray-700 space-y-2">
+                <li>🚿 비데</li>
+                <li>🌡️ 온수</li>
+                <li>🌸 방향제</li>
+                <li>💨 핸드드라이어</li>
+                <li>🧼 비누</li>
+                <li>🧻 휴지</li>
+                <li>🧴 손 소독제</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">기본 시설</h3>
+              <ul className="text-sm text-gray-700 space-y-2">
+                <li>🪞 거울</li>
+                <li>🚰 세면대</li>
+                <li>🗑️ 휴지통</li>
+                <li>🧻 위생용품 자판기</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">환경 & 쾌적성</h3>
+              <ul className="text-sm text-gray-700 space-y-2">
+                <li>🎵 배경 음악</li>
+                <li>💨 환기</li>
+                <li>🔥 난방</li>
+                <li>❄️ 냉방</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+  {/* Crowd-Sourced Amenities Verification */}
+  <section id="verification" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800">Beta</span>
+              <Link href="/verification" className="text-teal-600 text-sm underline hover:text-teal-700">자세히 보기</Link>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              사용자 검증 기반 편의시설
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              리뷰가 등록될 때마다 편의시설 정보가 자동 집계되고 신뢰도(1–5점)가 갱신됩니다. 툴팁으로 퍼센트와 검증 횟수를 제공합니다.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            <div className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">실시간 집계</h3>
+              <p className="text-gray-600 text-sm">각 리뷰의 편의시설 선택이 즉시 반영되어 통합 결과를 업데이트합니다.</p>
+            </div>
+            <div className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">신뢰도 점수</h3>
+              <p className="text-gray-600 text-sm">확인/부정 비율 기반 1–5점 스코어, 가중치 반영</p>
+            </div>
+            <div className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">직관적 표시</h3>
+              <p className="text-gray-600 text-sm">✅ 확인됨 / ❓ 검증 필요 / ❌ 부정됨 상태와 툴팁으로 세부 수치를 제공합니다.</p>
+            </div>
+          </div>
+
+          <div className="bg-gray-50 rounded-2xl p-6">
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <span className="px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm">✅ 확인됨 (신뢰도 높음)</span>
+              <span className="px-3 py-1 rounded-full bg-orange-100 text-orange-800 text-sm">❓ 검증 필요 (불확실)</span>
+              <span className="px-3 py-1 rounded-full bg-red-100 text-red-800 text-sm">❌ 부정됨 (신뢰도 낮음)</span>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+              <div className="flex items-center justify-between bg-white rounded-xl border border-gray-200 p-3">
+                <span className="text-sm text-gray-800">👶 기저귀 교환대</span>
+                <span className="px-2 py-1 rounded bg-green-100 text-green-700 text-xs">✅ 92% (확인 46 · 부정 4)</span>
+              </div>
+              <div className="flex items-center justify-between bg-white rounded-xl border border-gray-200 p-3">
+                <span className="text-sm text-gray-800">🚿 비데</span>
+                <span className="px-2 py-1 rounded bg-orange-100 text-orange-700 text-xs">❓ 68% (확인 17 · 부정 8)</span>
+              </div>
+              <div className="flex items-center justify-between bg-white rounded-xl border border-gray-200 p-3">
+                <span className="text-sm text-gray-800">🧴 손 소독제</span>
+                <span className="px-2 py-1 rounded bg-red-100 text-red-700 text-xs">❌ 40% (확인 8 · 부정 12)</span>
+              </div>
+            </div>
+            <div className="mt-6">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-gray-800">전체 정확도</span>
+                <span className="text-sm text-gray-600">82%</span>
+              </div>
+              <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                <div
+                  className="h-3 bg-gradient-to-r from-teal-500 to-blue-500 animate-grow-width"
+                  style={{ ['--target-width' as any]: '82%' }}
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      {/* Reporting System */}
+      <section id="reporting" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800">Beta</span>
+              <Link href="/reporting" className="text-teal-600 text-sm underline hover:text-teal-700">자세히 보기</Link>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">신고 시스템</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              부적절한 콘텐츠를 손쉽게 신고하세요. 3회 이상 신고 시 자동으로 숨김 처리되며,
+              관리자가 신속히 검토합니다. 정부/공공 데이터는 신고 대상에서 제외됩니다.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            <div className="bg-white rounded-2xl p-6 shadow">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">신고 사유</h3>
+              <p className="text-gray-600 text-sm">허위 정보, 부적절한 내용, 스팸, 중복, 욕설, 부적절한 사진, 기타</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">자동 숨김</h3>
+              <p className="text-gray-600 text-sm">동일 콘텐츠 3회 신고 시 자동 숨김 및 작성자 알림</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">관리자 도구</h3>
+              <p className="text-gray-600 text-sm">상태 변경(검토중/해결/기각), 통계, 일괄 처리, 메모 기록</p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-6">
+            <ol className="list-decimal pl-6 text-gray-700 space-y-2">
+              <li>사용자가 신고 버튼 클릭</li>
+              <li>신고 다이얼로그에서 사유 선택 및 설명 입력</li>
+              <li>Firestore에 신고 저장 및 건수 확인</li>
+              <li>3건 이상이면 콘텐츠 자동 숨김, 작성자 알림</li>
+              <li>관리자 화면에서 검토, 해결/기각 처리 및 메모</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    
 
       {/* Hygiene Essentials Section */}
       <section
@@ -312,13 +499,13 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                MyRestroom의 비전
+                나의 화장실의 비전
               </h2>
               <p className="text-lg text-gray-600 mb-6">
                 우리는 모든 사람이 언제 어디서나 깨끗하고 편리한 화장실을 이용할
-                수 있는 세상을 만들고자 합니다. 사용자들의 실제 경험과 리뷰를
-                바탕으로 최고의 화장실 정보를 제공하며, 모든 화장실이 기본적인
-                위생 용품을 갖추도록 노력합니다.
+                수 있는 세상을 만들고자 합니다. 사용자들의 실제 경험과 리뷰,
+                그리고 세부 편의시설 데이터를 바탕으로 원하는 화장실을 정확히
+                찾을 수 있도록 돕습니다.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
@@ -356,11 +543,14 @@ export default function Home() {
                   찾아보세요!
                 </p>
                 <Link
-                  href="/contact"
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-white text-teal-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-block"
                 >
                   다운로드하기
                 </Link>
+                <p className="mt-3 text-sm text-white/90">Android 버전은 준비 중입니다.</p>
               </div>
             </div>
           </div>
@@ -382,7 +572,7 @@ export default function Home() {
                     className="rounded-lg"
                   />
                 </div>
-                <span className="text-xl font-bold">MyRestroom</span>
+                <span className="text-xl font-bold">나의 화장실</span>
               </div>
               <p className="text-gray-400">
                 깨끗한 나의 화장실을 찾는 가장 쉬운 방법
@@ -489,7 +679,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 MyRestroom. All rights reserved.</p>
+            <p>&copy; 2025 나의 화장실. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -8,6 +8,9 @@ import {
   FaMobileAlt,
 } from "react-icons/fa";
 
+const APP_STORE_URL =
+  "https://apps.apple.com/us/app/%EB%82%98%EC%9D%98-%ED%99%94%EC%9E%A5%EC%8B%A4/id6748704814";
+
 export default function FAQPage() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -99,10 +102,21 @@ export default function FAQPage() {
                   Q: MyRestroom 앱은 어떻게 다운로드하나요?
                 </h3>
                 <p className="text-gray-600">
-                  A: App Store(아이폰) 또는 Google Play Store(안드로이드)에서
-                  &ldquo;MyRestroom&rdquo;을 검색하여 다운로드하실 수 있습니다.
-                  또는 홈페이지의 다운로드 버튼을 통해 스토어로 이동할 수
-                  있습니다.
+                  A: 현재 iOS 버전은
+                  <Link href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="text-teal-600 underline ml-1">App Store</Link>
+                  에서 다운로드 가능합니다. Android 버전은 준비 중입니다.
+                </p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Q: 어떤 편의시설 정보를 제공하나요?
+                </h3>
+                <p className="text-gray-600">
+                  A: 아기/가족(기저귀 교환대, 수유실, 가족 화장실), 위생(비데, 온수,
+                  방향제, 핸드드라이어, 비누, 휴지, 손 소독제), 기본 시설(거울, 세면대,
+                  휴지통, 위생용품 자판기), 환경/쾌적성(배경 음악, 환기, 난방, 냉방) 등
+                  세부 항목을 지원합니다.
                 </p>
               </div>
 
@@ -200,6 +214,53 @@ export default function FAQPage() {
             </h2>
 
             <div className="space-y-6">
+              <div className="border-b border-gray-200 pb-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Q: 부적절한 콘텐츠는 어떻게 신고하나요?
+                </h3>
+                <p className="text-gray-600">
+                  A: 화장실 상세 화면과 리뷰 카드에 있는 ‘신고’ 버튼을 누르면 신고 다이얼로그가 열립니다.
+                  사유(허위 정보, 부적절한 내용, 스팸, 중복, 욕설, 부적절한 사진, 기타)를 선택하고 필요시 설명을 추가하세요.
+                </p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Q: 신고가 3건 이상이면 어떻게 되나요?
+                </h3>
+                <p className="text-gray-600">
+                  A: 동일 콘텐츠에 신고가 3회 이상 접수되면 자동으로 숨김 처리되며, 작성자에게 알림이 전송됩니다.
+                  이후 관리자가 검토하여 ‘해결’ 또는 ‘기각’으로 처리합니다.
+                </p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Q: 어떤 콘텐츠를 신고할 수 있나요?
+                </h3>
+                <p className="text-gray-600">
+                  A: 사용자 등록 화장실과 모든 리뷰는 신고할 수 있습니다. 정부/공공 데이터는 신고 대상에서 제외됩니다.
+                </p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Q: 허위 신고를 하면 어떤 불이익이 있나요?
+                </h3>
+                <p className="text-gray-600">
+                  A: 반복적인 허위 신고는 계정 제재 사유가 될 수 있으며, 신고 단계에서 경고 문구가 안내됩니다.
+                </p>
+              </div>
+              <div className="border-b border-gray-200 pb-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Q: 편의시설 정보의 신뢰도는 어떻게 보나요?
+                </h3>
+                <p className="text-gray-600">
+                  A: 각 편의시설 항목은 사용자 리뷰를 통해 실시간으로 집계됩니다.
+                  확인/부정 비율로 신뢰도(1-5점)가 계산되며, 상태는 ✅ 확인됨 / ❓ 검증 필요 / ❌ 부정됨으로 표시돼요.
+                  항목 위에 마우스를 올리면(모바일은 탭) 신뢰도와 검증 횟수 툴팁이 표시됩니다.
+                </p>
+              </div>
               <div className="border-b border-gray-200 pb-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Q: 리뷰를 작성하려면 계정이 필요한가요?
